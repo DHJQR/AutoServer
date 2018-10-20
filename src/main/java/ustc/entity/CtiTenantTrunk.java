@@ -3,9 +3,14 @@ package ustc.entity;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.math.BigInteger;
 
+/**
+ * @author 陈桢秀
+ * 租户线路匹配表
+ */
 @Entity
-public class CtiTenantTrunks {
+public class CtiTenantTrunk {
     //主键
     @Id
     @GeneratedValue
