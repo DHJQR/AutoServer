@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface CtiTenantTrunkRepository extends JpaRepository<CtiTenantTrunk, Integer> {
 
-    //通过name进行查询
-    public List<CtiTenantTrunk> findByTrunk_type(String trunk_type);
+//    //通过name进行查询
+//    public List<CtiTenantTrunk> findByTrunk_type(String trunk_type);
 }
 

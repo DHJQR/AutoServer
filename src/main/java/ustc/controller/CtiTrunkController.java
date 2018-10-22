@@ -61,6 +61,11 @@ public class CtiTrunkController {
         return ctiTrunkRepository.findOne(id);
     }
 
+    /**
+     * 根据线路name来查询线路
+     * @param name
+     * @return
+     */
     @GetMapping(value = "/ctitrunks/name/{name}")
     public List<CtiTrunk> ctiTrunksListByName(@PathVariable("name") String name){
         return ctiTrunkRepository.findByName(name);

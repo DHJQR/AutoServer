@@ -39,7 +39,7 @@ public class CtiTenantTrunkController {
      * @return
      */
     @PostMapping(value = "/CtiTenantTrunks")
-    public CtiTenantTrunk CtiTenantTrunkAdd(@RequestParam("tenant_id") Integer tenant_id,
+    public CtiTenantTrunk ctiTenantTrunkAdd(@RequestParam("tenant_id") Integer tenant_id,
                                 @RequestParam("trunk_id")  String trunk_id,
                                 @RequestParam("trunk_type") String trunk_type,
                                 @RequestParam("line_limit") Integer line_limit){
@@ -58,14 +58,14 @@ public class CtiTenantTrunkController {
      * @return
      */
     @GetMapping(value = "/CtiTenantTrunks/{id}")
-    public CtiTenantTrunk CtiTenantTrunkFindOne(@PathVariable("id") Integer id){
+    public CtiTenantTrunk ctiTenantTrunkFindOne(@PathVariable("id") Integer id){
         return ctiTenantTrunkRepository.findOne(id);
     }
 //
-    @GetMapping(value = "/CtiTenantTrunks/trunktype/{trunktype}")
-    public List<CtiTenantTrunk> CtiTenantTrunksListByName(@PathVariable("trunktype") String trunktype){
-        return ctiTenantTrunkRepository.findByTrunk_type(trunktype);
-    }
+//    @GetMapping(value = "/CtiTenantTrunks/trunktype/{trunktype}")
+//    public List<CtiTenantTrunk> CtiTenantTrunksListByName(@PathVariable("trunktype") String trunktype){
+//        return ctiTenantTrunkRepository.findByTrunk_type(trunktype);
+//    }
 
     /**
      * 更新一条租户线路匹配
@@ -77,7 +77,7 @@ public class CtiTenantTrunkController {
      * @return
      */
     @PutMapping(value = "/CtiTenantTrunks/{id}")
-    public CtiTenantTrunk CtiTenantTrunkUpdate(@PathVariable("id") Integer id,
+    public CtiTenantTrunk ctiTenantTrunkUpdate(@PathVariable("id") Integer id,
                                    @RequestParam("tenant_id") Integer tenant_id,
                                    @RequestParam("trunk_id")  String trunk_id,
                                    @RequestParam("trunk_type") String trunk_type,
@@ -97,7 +97,7 @@ public class CtiTenantTrunkController {
      * @param id
      */
     @DeleteMapping(value = "/CtiTenantTrunks/{id}")
-    public void CtiTenantTrunkDelete(@PathVariable("id") Integer id){
+    public void ctiTenantTrunkDelete(@PathVariable("id") Integer id){
         ctiTenantTrunkRepository.delete(id);
     }
 
@@ -105,7 +105,7 @@ public class CtiTenantTrunkController {
      * 插入两条数据，来自Service的insertTwo函数
      */
     @PostMapping(value = "/CtiTenantTrunks/two")
-    public void CtiTenantTrunkTwo(){
+    public void ctiTenantTrunkTwo(){
         ctiTenantTrunkService.insertTwo();
     }
 }
